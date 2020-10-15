@@ -1,0 +1,30 @@
+zuul:
+  prefix: /api
+  routes:
+    patient-service:
+      path: /patient/**
+      service-id: PATIENT-SERVICE
+    doctor-service:
+      path: /doctor/**
+      service-id: DOCTOR-SERVICE
+    diagnosis-service:
+      path: /diagnosis/**
+      service-id: DIAGNOSIS-SERVICE
+    consultation-service:
+      path: /consultation/**
+      service-id: CONSULTATION-SERVICE
+
+info:
+  app:
+    name: api gateway server
+    description: Api gateway for all service
+
+server:
+  port: 8765
+    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  
+      
